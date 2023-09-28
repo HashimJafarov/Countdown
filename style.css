@@ -1,11 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  font-family: "Roboto", sans-serif;
 }
 .promo {
   height: 100vh;
-  background-color: purple;
+  background: rgb(13, 18, 130);
+  background: linear-gradient(
+    0deg,
+    rgba(13, 18, 130, 1) 7%,
+    rgba(215, 19, 19, 1) 62%,
+    rgba(100, 153, 233, 1) 94%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+form {
+  width: 1000px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+form button {
+  width: 50%;
+  height: 35px;
+  background-color: rgb(156, 253, 12);
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  color: #fff;
+}
+form input {
+  height: 35px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 5px;
+}
+.countdown {
+  width: 1000px;
+  height: 300px;
+}
+.countdown_wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+}
+.countdown_hours,
+.countdown_minutes,
+.countdown_seconds {
+  text-align: center;
+}
+
+.timer {
+  width: 200px;
+  font-size: 50px;
+  letter-spacing: 145px;
+  text-align: center;
+  height: 180px;
+  padding: 60px 0;
+  position: relative;
+  font-weight: 300;
+  z-index: 0;
+}
+.timer::before {
+  content: "";
+  width: 125px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-40%);
+  background-color: #fff;
+  z-index: -1;
+  border-radius: 8px;
+}
+.timer::after {
+  content: "";
+  width: 125px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  background-color: #fff;
+  z-index: -1;
+  border-radius: 8px;
+}
+.timer + p {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
+}
+.countdown_hours,
+.countdown_minutes {
+  position: relative;
+}
+.countdown_hours::after,
+.countdown_minutes::after {
+  content: ":";
+  position: absolute;
+  top: 55px;
+  right: -85px;
+  font-size: 50px;
+  color: #fff;
+  text-decoration: dotted;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.btns button {
+  width: 75px;
+  height: 75px;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+.expired {
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
 }
